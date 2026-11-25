@@ -1,9 +1,8 @@
 # Só para você
 
 Site estático em português para apresentar uma carta de amor. Abra o arquivo
-index.html no navegador para ver a prévia. O menu Música abre o player do
-YouTube e oferece um link direto para a faixa. Para testar o player incorporado,
-sirva a pasta por HTTP ou HTTPS.
+index.html no navegador para ver a prévia. O botão Tocar música reproduz em
+loop a faixa Lullaby for Erik, de Evgeny Grinko, incluída em assets.
 
 ## Colocar a carta
 

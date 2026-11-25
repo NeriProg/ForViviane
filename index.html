@@ -13,13 +13,9 @@
 <body>
   <header class="top">
     <span class="brand"><span aria-hidden="true">♡</span> Viviane's place</span>
-    <details class="soundtrack">
-      <summary class="music"><span aria-hidden="true">♫</span> Música</summary>
-      <div class="soundtrack-panel">
-        <a href="https://www.youtube.com/watch?v=X5UmxZkLXro" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
-      </div>
-    </details>
+    <button class="music" type="button"><span aria-hidden="true">♫</span> <span id="music-label">Tocar música</span></button>
   </header>
+  <audio id="soundtrack" src="./assets/lullaby-for-erik.mp3" preload="none" loop></audio>
   <main>
     <section class="intro" aria-labelledby="title">
       <div class="copy">

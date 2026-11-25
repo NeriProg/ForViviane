@@ -31,7 +31,6 @@ button:focus-visible { outline: 2px solid var(--wine); outline-offset: 5px; }
 }
 .brand { font: 500 1.25rem var(--display); }
 .brand span, .music span:first-child { color: var(--wine); margin-right: 5px; }
-.soundtrack { position: relative; z-index: 2; }
 .music, .close {
   color: var(--wine);
   border: 1px solid #71264055;
@@ -41,21 +40,6 @@ button:focus-visible { outline: 2px solid var(--wine); outline-offset: 5px; }
   min-height: 44px;
   font-size: .85rem;
 }
-.music { cursor: pointer; list-style: none; }
-.music::-webkit-details-marker { display: none; }
-.music:focus-visible { outline: 2px solid var(--wine); outline-offset: 5px; }
-.soundtrack-panel {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 8px);
-  width: min(360px, calc(100vw - 36px));
-  padding: 10px;
-  border-radius: 10px;
-  background: #fff9f0;
-  box-shadow: 0 8px 26px #61243830;
-}
-.soundtrack-panel iframe { display: block; width: 100%; height: 200px; border: 0; }
-.soundtrack-panel a { display: inline-block; margin-top: 8px; color: var(--wine); }
 main { flex: 1; width: min(1050px, calc(100% - 64px)); margin: auto; }
 .intro {
   display: grid;

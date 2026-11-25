@@ -41,21 +41,31 @@ heartButton.addEventListener('click', () => {
   heartStatus.textContent = liked ? '' : 'Um coração ficou aqui.';
 });
 
-const soundtrack = document.querySelector('.soundtrack');
-const soundtrackPanel = document.querySelector('.soundtrack-panel');
-let player;
+const soundtrack = document.querySelector('#soundtrack');
+const musicButton = document.querySelector('.music');
+const musicLabel = document.querySelector('#music-label');
 
-soundtrack.addEventListener('toggle', () => {
-  if (!soundtrack.open) {
-    player?.remove();
-    player = undefined;
+soundtrack.addEventListener('playing', () => {
+  musicLabel.textContent = 'Pausar música';
+});
+soundtrack.addEventListener('pause', () => {
+  musicLabel.textContent = 'Tocar música';
+});
+soundtrack.addEventListener('error', () => {
+  musicLabel.textContent = 'Áudio indisponível';
+});
+
+musicButton.addEventListener('click', async () => {
+  if (!soundtrack.paused) {
+    soundtrack.pause();
     return;
   }
 
-  player = document.createElement('iframe');
-  player.title = 'Trilha sonora no YouTube';
-  player.src = 'https://www.youtube.com/embed/X5UmxZkLXro?playsinline=1&loop=1&playlist=X5UmxZkLXro';
-  player.referrerPolicy = 'strict-origin-when-cross-origin';
-  player.allowFullscreen = true;
-  soundtrackPanel.prepend(player);
+  try {
+    await soundtrack.play();
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      musicLabel.textContent = 'Áudio indisponível';
+    }
+  }
 });
