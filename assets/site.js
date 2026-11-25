@@ -8,6 +8,8 @@ const heartStatus = document.querySelector('.heart-status');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const musicButton = document.querySelector('.music');
 const musicLabel = document.querySelector('#music-label');
+const footerDefault = document.querySelector('#footer-default');
+const footerLetter = document.querySelector('#footer-letter');
 
 document.querySelector('#letter-note').hidden = !carta.previa;
 letterTitle.textContent = carta.titulo;
@@ -21,6 +23,8 @@ for (const text of carta.paragrafos) {
 function showLetter(open) {
   intro.classList.toggle('is-open', open);
   letter.hidden = !open;
+  footerDefault.hidden = open;
+  footerLetter.hidden = !open;
   openButton.setAttribute('aria-expanded', String(open));
   const destination = open ? letterTitle : openButton;
   destination.focus({ preventScroll: true });

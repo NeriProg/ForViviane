@@ -151,7 +151,7 @@ h2 { font-size: clamp(2rem, 6vw, 3.4rem); margin: 0 0 24px; }
 .heart-status { font-size: .85rem; color: var(--muted); margin: 8px 0 14px; min-height: 1.2em; }
 @keyframes pulse { 50% { transform: scale(1.2); } }
 footer { padding: 17px 0 20px; border-top: 1px solid #71264030; color: var(--muted); font-size: .8rem; }
-footer span { color: var(--wine); margin-right: 5px; }
+footer span[aria-hidden] { color: var(--wine); margin-right: 5px; }
 @media (max-width: 680px) {
   .top, main, footer { width: calc(100% - 36px); }
   .top { padding-block: 14px; }
