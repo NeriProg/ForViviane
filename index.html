@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma carta para abrir com calma.">
+  <meta name="theme-color" content="#f7ece5">
+  <title>Para você · Uma carta de amor</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/carta.js" defer></script>
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <span class="brand"><span aria-hidden="true">♡</span> Para você</span>
+    <button class="music" type="button" aria-pressed="false"><span aria-hidden="true">♫</span> <span id="music-label">Tocar música</span></button>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div class="copy">
+        <p class="kicker">Uma carta de amor</p>
+        <h1 id="title">Só para<br><em>você.</em></h1>
+        <p class="subtitle">Algumas coisas merecem ser lidas devagar.</p>
+        <button class="open" type="button" aria-controls="letter" aria-expanded="false">Abrir a carta <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="still-life" aria-hidden="true">
+        <div class="halo"></div>
+        <span class="spark first">✧</span><span class="spark second">✦</span><span class="spark third">✧</span>
+        <div class="envelope">
+          <div class="paper"><span>Para você,</span><i></i><i></i><i></i></div>
+          <div class="fold"></div>
+          <div class="flap"></div>
+          <div class="seal">♥</div>
+        </div>
+      </div>
+    </section>
+    <article id="letter" class="letter" hidden aria-labelledby="letter-title">
+      <p class="kicker" id="letter-note">Prévia da carta</p>
+      <h2 id="letter-title" tabindex="-1"></h2>
+      <div id="letter-body"></div>
+      <p id="signature"></p>
+      <button class="heart" type="button" aria-label="Deixar um coração" aria-pressed="false">♡</button>
+      <p class="heart-status" role="status"></p>
+      <button class="close" type="button">Guardar a carta ↑</button>
+    </article>
+  </main>
+  <footer><span aria-hidden="true">✦</span> Feito com carinho</footer>
+</body>
+</html>
