@@ -1,6 +1,6 @@
 const carta = {
   previa: false,
-  titulo: 'de neri para vivi <3',
+  titulo: 'como tudo acontece',
   paragrafos: [
     `Só precisei te olhar uma vez pra o coração acelerar
 Era como se ele soubesse que por ti eu iria me apaixonar
@@ -17,5 +17,5 @@ Essa beleza inebriante que habita em você`,
 Te empresto os meus olhos, pra que enfim possas perceber
 Que até o que em ti não amas, eu aprendi a querer`
   ],
-  assinatura: ''
+  assinatura: 'de: neri\npara: vivi ♥'
 };
