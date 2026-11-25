@@ -1,8 +1,9 @@
 # Só para você
 
 Site estático em português para apresentar uma carta de amor. Abra o arquivo
-index.html no navegador para ver a prévia. O botão de música toca uma melodia
-instrumental sintetizada pelo próprio site.
+index.html no navegador para ver a prévia. O menu Música abre o player do
+YouTube e oferece um link direto para a faixa. Para testar o player incorporado,
+sirva a pasta por HTTP ou HTTPS.
 
 ## Colocar a carta
 

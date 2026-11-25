@@ -6,8 +6,6 @@ const letterTitle = document.querySelector('#letter-title');
 const heartButton = document.querySelector('.heart');
 const heartStatus = document.querySelector('.heart-status');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const musicButton = document.querySelector('.music');
-const musicLabel = document.querySelector('#music-label');
 const footerDefault = document.querySelector('#footer-default');
 const footerLetter = document.querySelector('#footer-letter');
 
@@ -43,59 +41,21 @@ heartButton.addEventListener('click', () => {
   heartStatus.textContent = liked ? '' : 'Um coração ficou aqui.';
 });
 
-let soundtrack;
-let musicBusy = false;
-const phrases = [
-  [48, 55, 60, 64, 67, 64, 60, 55],
-  [45, 52, 57, 60, 64, 60, 57, 52],
-  [41, 48, 53, 57, 60, 64, 60, 57],
-  [43, 50, 55, 59, 62, 67, 62, 59]
-];
+const soundtrack = document.querySelector('.soundtrack');
+const soundtrackPanel = document.querySelector('.soundtrack-panel');
+let player;
 
-function createSoundtrack() {
-  const context = new AudioContext();
-  const duration = 0.55;
-  const sampleCount = Math.round(context.sampleRate * duration * phrases.flat().length);
-  const buffer = context.createBuffer(1, sampleCount, context.sampleRate);
-  const samples = buffer.getChannelData(0);
-
-  phrases.flat().forEach((note, index) => {
-    const start = Math.round(index * duration * context.sampleRate);
-    const frequency = 440 * 2 ** ((note - 69) / 12);
-    for (let frame = 0; frame < context.sampleRate * 2; frame++) {
-      const time = frame / context.sampleRate;
-      const phase = 2 * Math.PI * frequency * time;
-      const volume = 0.15 * Math.min(time / 0.025, 1) * Math.exp(-3.2 * time);
-      samples[(start + frame) % sampleCount] += volume *
-        (Math.sin(phase) + 0.22 * Math.sin(phase * 2) + 0.07 * Math.sin(phase * 3));
-    }
-  });
-
-  const source = context.createBufferSource();
-  source.buffer = buffer;
-  source.loop = true;
-  source.connect(context.destination);
-  source.start();
-  return context;
-}
-
-musicButton.addEventListener('click', async () => {
-  if (musicBusy) return;
-  musicBusy = true;
-  try {
-    if (musicButton.getAttribute('aria-pressed') === 'true') {
-      await soundtrack.suspend();
-      musicButton.setAttribute('aria-pressed', 'false');
-      musicLabel.textContent = 'Tocar música';
-    } else {
-      soundtrack ??= createSoundtrack();
-      await soundtrack.resume();
-      musicButton.setAttribute('aria-pressed', 'true');
-      musicLabel.textContent = 'Pausar música';
-    }
-  } catch {
-    musicLabel.textContent = 'Áudio indisponível';
-  } finally {
-    musicBusy = false;
+soundtrack.addEventListener('toggle', () => {
+  if (!soundtrack.open) {
+    player?.remove();
+    player = undefined;
+    return;
   }
+
+  player = document.createElement('iframe');
+  player.title = 'Trilha sonora no YouTube';
+  player.src = 'https://www.youtube.com/embed/X5UmxZkLXro?playsinline=1&loop=1&playlist=X5UmxZkLXro';
+  player.referrerPolicy = 'strict-origin-when-cross-origin';
+  player.allowFullscreen = true;
+  soundtrackPanel.prepend(player);
 });
