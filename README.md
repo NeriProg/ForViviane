@@ -4,11 +4,21 @@ Site estático em português para apresentar uma carta de amor. Abra o arquivo
 index.html no navegador para ver a prévia. O botão Tocar música reproduz em
 loop a faixa Lullaby for Erik, de Evgeny Grinko, incluída em assets.
 
-## Colocar a carta
+## Adicionar uma carta
 
-Edite assets/carta.js. Preencha o título, os parágrafos e a assinatura, e altere
-previa para false. Para inserir uma quebra de linha dentro de um parágrafo,
-use \n na posição desejada.
+Em `assets/carta.js`, acrescente um objeto à lista `cartas` para cada carta.
+A ordem dos objetos é a ordem do menu. Use `AAAA-MM-DD` na data. Assinatura
+e rodapé são opcionais. Para quebrar a linha dentro de um parágrafo, use `\n`.
+
+```js
+{
+  titulo: 'Título da carta',
+  data: '2026-11-26',
+  paragrafos: ['Primeiro parágrafo.', 'Segundo parágrafo.'],
+  assinatura: 'de: neri\npara: vivi ♥',
+  rodape: 'Mensagem no fim da página.'
+}
+```
 
 ## Publicação
 

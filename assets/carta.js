@@ -1,5 +1,5 @@
-const carta = {
-  previa: false,
+const cartas = [{
+  data: '2026-11-25',
   titulo: 'como tudo acontece',
   paragrafos: [
     `Só precisei te olhar uma vez pra o coração acelerar
@@ -17,5 +17,6 @@ Essa beleza inebriante que habita em você`,
 Te empresto os meus olhos, pra que enfim possas perceber
 Que até o que em ti não amas, eu aprendi a querer`
   ],
-  assinatura: 'de: neri\npara: vivi ♥'
-};
+  assinatura: 'de: neri\npara: vivi ♥',
+  rodape: 'você é a mulher mais linda que já cruzou meu caminho, e não tenho dúvidas que também é a dona da maior beleza que esse mundo já viu, e o mais interessante é descobrir que toda a sua beleza é a parte menos interessante em você.. você na minha vida foi o melhor presente que Deus poderia me conceder, não tenho dúvidas que ele ouviu minhas orações. pode ficar o quanto quiser, meu amor.'
+}];
